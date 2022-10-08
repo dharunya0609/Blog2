@@ -48,7 +48,7 @@ app.post('/products',(req,res)=>{
     product.rating=req.body.rating;
     product.image=req.body.image
     product.save()
-    res.redirect('http://localhost:3000/products')
+    res.redirect('https://blog20itr022.herokuapp.com/products')
     }catch(Err)
     {
         console.log(Err.message);
@@ -61,10 +61,10 @@ app.post('/products/delete',async(req,res)=>{
     const {id} = req.body
     const product= await Product.findByIdAndDelete(id);
 
-       res.redirect('http://localhost:3000/products')
+       res.redirect('https://blog20itr022.herokuapp.com/products')
 
     })
-const PORT = 5000 || process.env.PORT
+const PORT =  process.env.PORT || 3000
 app.listen(PORT,function(){
    console.log("Server is running")
 }
